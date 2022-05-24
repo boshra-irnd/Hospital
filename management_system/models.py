@@ -21,7 +21,7 @@ class Province(Common):
     
 class City(Common):
     name = models.CharField(max_length=255)
-    province = models.ForeignKey(Province, on_delete=models.PROTECT)
+    province = models.ForeignKey(Province, on_delete=models.PROTECT, related_name='cities')
     
     def __str__(self):
         return (f'{self.name} | {self.province}')

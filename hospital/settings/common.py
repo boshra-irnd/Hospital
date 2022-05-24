@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third-party apps
+    'jalali_date',
     # my apps
     'core.apps.CoreConfig',
     'management_system.apps.ManagementSystemConfig',
@@ -69,6 +71,26 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hospital.wsgi.application'
+
+
+# default settings
+JALALI_DATE_DEFAULTS = {
+   'Strftime': {
+        'date': '%y/%m/%d',
+        'datetime': '%H:%M:%S _ %y/%m/%d',
+    },
+    'Static': {
+        'js': [
+            # loading datepicker
+            'admin/js/django_jalali.min.js',
+        ],
+        'css': {
+            'all': [
+                'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css',
+            ]
+        }
+    },
+}
 
 
 # Database
